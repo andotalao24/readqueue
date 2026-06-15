@@ -1,16 +1,120 @@
-<!DOCTYPE>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" conetent="width=device-width, initial-scale-1.0">
-        <meta name="author" content="Jiachen Zhao>
-        <title>Readqueue</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap-grid.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="/css/base.css">
-        <link rel="stylesheet" href="/css/landing.css"
-    </head>
-    <body>
-        <h1>Testing landing page</h1>
-    </body>
-    </html>
-            
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Jiachen Zhao" />
+    <title>ReadQueue</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/cards.css" />
+    <link rel="stylesheet" href="css/landing.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="40" height="40">
+          <rect x="0.5" y="0.5" width="39" height="39" fill="blue" stroke="currentColor" />
+        </svg>
+      </span>
+      <span class="wordmark">ReadQueue</span>
+    </header>
+
+    <main class="layout" id="layout">
+      <section class="content">
+        <div class="list-header">
+          <h1>List title</h1>
+          <p class="subtitle">List description</p>
+        </div>
+
+        <div class="toolbar-top">
+          <nav class="tabs">
+            <button class="tab is-active" data-tab="papers">Papers</button>
+            <button class="tab" data-tab="books">Books</button>
+          </nav>
+          <button class="btn btn-add">+ Add Item</button>
+        </div>
+
+        <div class="toolbar-filters">
+          <div class="search">
+            <span class="search-icon" aria-hidden="true">&#128269;</span>
+            <input type="search" placeholder="Search..." />
+          </div>
+          <div class="filters">
+            <button class="filter is-active">All</button>
+            <button class="filter">To-Read</button>
+            <button class="filter">Reading</button>
+            <button class="filter">Done</button>
+          </div>
+        </div>
+
+        <ul class="paper-list" data-panel="papers">
+          <li class="paper-card">
+            <span class="paper-num">1</span>
+            <div class="paper-body">
+              <div class="paper-main">
+                <h3 class="paper-title">Paper title</h3>
+                <p class="paper-authors">Author</p>
+                <p class="paper-venue">Venue · Year</p>
+                <div class="tags">
+                  <span class="tag">tag</span>
+                </div>
+              </div>
+              <div class="paper-side">
+                <button class="status">To-Read</button>
+                <div class="paper-actions">
+                  <button class="action action-edit">&#9998; Edit</button>
+                  <button class="action action-delete">&#128465; Delete</button>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        <ul class="paper-list" data-panel="books" hidden>
+          <li class="paper-card">
+            <span class="paper-num">1</span>
+            <div class="paper-body">
+              <div class="paper-main">
+                <h3 class="paper-title">Book title</h3>
+                <p class="paper-authors">Author</p>
+                <p class="paper-venue">Publisher · Year</p>
+                <div class="tags">
+                  <span class="tag">tag</span>
+                </div>
+              </div>
+              <div class="paper-side">
+                <button class="status">To-Read</button>
+                <div class="paper-actions">
+                  <button class="action action-edit">&#9998; Edit</button>
+                  <button class="action action-delete">&#128465; Delete</button>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <aside class="comments" id="comments" hidden>
+        <h2 class="comments-title">Comments</h2>
+        <p class="comments-for">For: <a href="#" id="comments-for">selected item</a></p>
+
+        <ul class="comment-list">
+          <li class="comment">
+            <div class="comment-head">
+              <span class="comment-author">Author</span>
+              <span class="comment-date">Date</span>
+            </div>
+            <p class="comment-text">Comment text</p>
+          </li>
+        </ul>
+
+        <form class="comment-form">
+          <textarea rows="4" placeholder="Write a comment..."></textarea>
+          <button type="submit" class="btn btn-post">Post Comment</button>
+        </form>
+      </aside>
+    </main>
+
+    <script src="js/landing.js"></script>
+  </body>
+</html>
